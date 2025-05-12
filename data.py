@@ -17,7 +17,7 @@ url = (
 )
 
 url1 = "https://crm.rdstation.com/api/v1/deals?page=1&limit=200&created_at_period=true&start_date=2025-01-01T08%3A00%3A00&end_date=2025-05-05T08%3A00%3A00&token=681a40c4468df10014d4bf51"
-url2 = "https://crm.rdstation.com/api/v1/deals?created_at_start=2025-01-01&created_at_end=2025-05-06&page=1&limit=200"
+url2 = "https://crm.rdstation.com/api/v1/deals?page=1&limit=200&created_at_period=true&start_date=2025-01-01T08%3A00%3A00&end_date=2025-05-06T18%3A00%3A00&token=681a40c4468df10014d4bf51"
 
 print(end_date)
 print(url)
