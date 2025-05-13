@@ -1,0 +1,10 @@
+# Ignorar ambientes virtuais
+autord/
+
+# Ignorar arquivos temporários
+*.pyc
+**/__pycache__/
+
+# Ignorar arquivos de dados locais
+*.xlsx
+data/

@@ -46,6 +46,7 @@ while True:
 print(f"\n📊 Total de negociações carregadas: {len(df_total)}")
 
 # (opcional) Salvar para CSV ou banco SQLite
-df_total.to_excel("negociacoes_2025.xlsx", index=False)
+caminho = r"C:\Users\Orçamento\OneDrive - GRUPO RETEC\02. Engenharia\Dep. Orçamentos\POWERBI\AUTOMACAO RD\data\negociacoes_2025.xlsx"
+df_total.to_excel(caminho, index=False)
 
 
