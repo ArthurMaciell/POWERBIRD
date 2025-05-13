@@ -8,3 +8,5 @@ autord/
 # Ignorar arquivos de dados locais
 *.xlsx
 data/
+
+.env
