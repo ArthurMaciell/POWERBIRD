@@ -7,8 +7,9 @@ from datetime import datetime, timezone
 from utils.auth import get_rdstation_token
 
 page = 1
-start_date = '2025-01-01'
-end_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+start_date = '2024-01-01'
+end_date = '2024-12-31'
+#end_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 df_total = pd.DataFrame()
 
 token = get_rdstation_token()
@@ -42,6 +43,47 @@ while True:
     print(f"✅ Página {page} adicionada: {len(df_pagina)} registros")
     page += 1
 
+
+
+# 2) Garanta que a coluna seja lista de dicts
+def parse_custom_fields(s):
+    if isinstance(s, str):
+        try:
+            return ast.literal_eval(s)
+        except (ValueError, SyntaxError):
+            return []
+    elif isinstance(s, list):
+        return s
+    else:
+        return []
+df_total.loc[:, "deal_custom_fields"] = df_total["deal_custom_fields"].apply(parse_custom_fields)
+
+# 3) Função que retorna um dict {label: value} para cada linha
+def expandir_campos(campos):
+    resultado = {}
+    for campo in campos:
+        cf = campo.get("custom_field", {})
+        label = cf.get("label")
+        if label:
+            resultado[label] = campo.get("value")
+    return resultado
+
+# 4) Aplique a expansão e transforme em DataFrame
+df_custom = df_total["deal_custom_fields"] \
+    .apply(expandir_campos) \
+    .apply(pd.Series)
+
+# 5) Una ao DataFrame original
+df_expanded = pd.concat([df_total, df_custom], axis=1)
+
+# Agora cada label virou uma coluna, ex:
+#print(df_expanded.columns)       # verá colunas como 'Fator', 'Proposta Nº', 'Unidade de Negócio', …
+#print(df_expanded[["id", "user.name", "Fator", "Proposta Nº", "Unidade de Negócio"]].head())
+
+
+
 # Salvar
-caminho = r"C:\\Users\\Orçamento\\OneDrive - GRUPO RETEC\\02. Engenharia\\Dep. Orçamentos\\POWERBI\\AUTOMACAO RD\\data\\negociacoes_2025.xlsx"
-df_total.to_excel(caminho, index=False)
+caminho = r"C:\\Users\\Orçamento\\OneDrive - GRUPO RETEC\\02. Engenharia\\Dep. Orçamentos\\POWERBI\\AUTOMACAO RD\\data\\negociacoes_2024.xlsx"
+df_expanded.to_excel(caminho, index=False)
+
+print('Deu certo!!!')
