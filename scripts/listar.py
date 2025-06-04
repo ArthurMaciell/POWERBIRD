@@ -5,6 +5,8 @@ import requests
 import pandas as pd
 from datetime import datetime, timezone
 from utils.auth import get_rdstation_token
+from scripts.ajuste_dist import ajustar_dist
+from scripts.ajuste_rep import ajustar_rep
 
 page = 1
 start_date = '2025-01-01'
@@ -96,8 +98,7 @@ with open(log_path, "a", encoding="utf-8") as f:
     f.write(f"Executado com sucesso em {datetime.now()}\n")
     
 
-from scripts.ajuste_dist import ajustar_dist
-
 ajustar_dist(caminho)
+ajustar_rep(caminho)
 
 print('Deu certo!!!')
