@@ -94,5 +94,10 @@ log_path = os.path.join(log_dir, "execucao.log")
 
 with open(log_path, "a", encoding="utf-8") as f:
     f.write(f"Executado com sucesso em {datetime.now()}\n")
+    
+
+from scripts.ajuste_dist import ajustar_dist
+
+ajustar_dist(caminho)
 
 print('Deu certo!!!')
