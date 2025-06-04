@@ -37,8 +37,9 @@ def ajustar_rep(caminho):
     
     
     df_ganho_mes = df_rep[(df_rep['deal_stage.name'] == 'Venda Ganha') & df_rep['closed_at'].notna()]
-    df_ganho_mes['closed_at'] = pd.to_datetime(df['closed_at'])
-    df_ganho_mes['ano_mes'] = df_ganho_mes['closed_at'].dt.to_period('M')
+    df_ganho_mes = df_ganho_mes.copy()  # <— adiciona uma cópia explícita
+    df_ganho_mes.loc[:, 'closed_at'] = pd.to_datetime(df_ganho_mes['closed_at'])
+    df_ganho_mes.loc[:, 'ano_mes'] = df_ganho_mes['closed_at'].dt.to_period('M')
     faturamento_mensal = df_ganho_mes.groupby('ano_mes')['amount_total'].sum().reset_index()
 
     faturamento_mensal['ano_mes'] = faturamento_mensal['ano_mes'].astype(str)
