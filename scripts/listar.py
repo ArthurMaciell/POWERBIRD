@@ -7,9 +7,9 @@ from datetime import datetime, timezone
 from utils.auth import get_rdstation_token
 
 page = 1
-start_date = '2024-01-01'
-end_date = '2024-12-31'
-#end_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+start_date = '2025-01-01'
+#end_date = '2024-12-31'
+end_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 df_total = pd.DataFrame()
 
 token = get_rdstation_token()
@@ -83,7 +83,7 @@ df_expanded = pd.concat([df_total, df_custom], axis=1)
 
 
 # Salvar
-caminho = r"C:\\Users\\Orçamento\\OneDrive - GRUPO RETEC\\02. Engenharia\\Dep. Orçamentos\\POWERBI\\AUTOMACAO RD\\data\\negociacoes_2024.xlsx"
+caminho = r"C:\\Users\\Orçamento\\OneDrive - GRUPO RETEC\\02. Engenharia\\Dep. Orçamentos\\POWERBI\\AUTOMACAO RD\\data\\negociacoes_2025.xlsx"
 df_expanded.to_excel(caminho, index=False)
 
 print('Deu certo!!!')
