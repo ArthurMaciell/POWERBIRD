@@ -57,5 +57,5 @@ def ajustar_rep(caminho):
     faturamento_mensal.to_excel(r"C:\Users\Orçamento\OneDrive - GRUPO RETEC\02. Engenharia\Dep. Orçamentos\POWERBI\AUTOMACAO RD\data\faturamento_mensal.xlsx", index=False)
     
     
-    caminho_rep = r"C:\\Users\\Orçamento\\OneDrive - GRUPO RETEC\\02. Engenharia\\Dep. Orçamentos\\POWERBI\\AUTOMACAO RD\\data\\negociacoes_rep_2025.xlsx"
+    caminho_rep = r"C:\Users\Orçamento\OneDrive - GRUPO RETEC\02. Engenharia\Dep. Orçamentos\POWERBI\AUTOMACAO RD\data\negociacoes_rep_2025.xlsx"
     df_rep.to_excel(caminho_rep)
