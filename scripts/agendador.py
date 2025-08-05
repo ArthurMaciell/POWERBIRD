@@ -10,7 +10,7 @@ def listar():
         "C:\\Users\\Orçamento\\OneDrive - GRUPO RETEC\\02. Engenharia\\Dep. Orçamentos\\POWERBI\\AUTOMACAO RD\\scripts\\listar.py"
     ], check=True)
 
-schedule.every().day.at("14:04").do(listar)
+schedule.every().day.at("1:04").until().do(listar)
 #schedule.every().hour.at(":56").do(listar)
 
 while True:
