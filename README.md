@@ -86,6 +86,6 @@ A planilha será gerada na pasta `data/` (ou no caminho configurado).
 
 ## 👨‍💻 Autor
 
-**Seu Nome**\
-LinkedIn: [Arthur Maciel](linkedin.com/in/arthur-maciel6325)
+**Arthur Maciel**\
+LinkedIn: [linkedin.com/in/arthur-maciel6325](linkedin.com/in/arthur-maciel6325)
 
