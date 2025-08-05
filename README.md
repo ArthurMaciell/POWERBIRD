@@ -27,7 +27,7 @@ PowerBird/
 │   └── ajuste_rep.py
 ├── utils/
 │   └── auth.py           # Token OAuth2 do RD Station
-├── main.py               # Script principal de extração e tratamento
+├── listar.py               # Script principal de extração e tratamento
 └── README.md
 ```
 
@@ -59,7 +59,7 @@ pip install -r requirements.txt
 ### 4. Execute o script principal
 
 ```bash
-python main.py
+python listar.py
 ```
 
 A planilha será gerada na pasta `data/` (ou no caminho configurado).
