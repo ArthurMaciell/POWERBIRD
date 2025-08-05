@@ -85,7 +85,7 @@ df_expanded = pd.concat([df_total, df_custom], axis=1)
 
 
 # Salvar
-caminho = r"C:\\Users\\Orçamento\\OneDrive - GRUPO RETEC\\02. Engenharia\\Dep. Orçamentos\\POWERBI\\AUTOMACAO RD\\data\\negociacoes_2025.xlsx"
+caminho = r"C:\Users\Orçamento\ONE DRIVE ORCAMENTO\OneDrive - GRUPO RETEC\02. Engenharia\Dep. Orçamentos\POWERBI\AUTOMACAO RD\data\negociacoes_2025.xlsx"
 df_expanded.to_excel(caminho, index=False)
 
 # Garante que a pasta de logs exista
