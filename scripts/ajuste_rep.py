@@ -13,7 +13,8 @@ def ajustar_rep(caminho):
         "deal_lost_reason.name","Tipo de Contato", "Fonte de Contato" , "Tipo de Obra"   
     ]
     
-    df_rep = df[df['user.name'].isin(['Bruno Crispim', 'Gabriel  Bento'])]
+    #df_rep = df[df['user.name'].isin(['Bruno Crispim', 'Gabriel  Bento'])]
+    df_rep = df[df['Unidade de Negócio'].isin(['Representação'])]
     df_rep = df_rep[colunas].copy()
     df_rep.loc[:, "Fator"] = (
         df_rep["Fator"]

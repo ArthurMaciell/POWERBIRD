@@ -13,7 +13,8 @@ def ajustar_dist(caminho):
         "deal_lost_reason.name","Tipo de Contato", "Fonte de Contato" , "Tipo de Obra", "Produtos (Distribuição)"  
     ]
     
-    df_dist = df[df['user.name'].isin(['Luan Araújo', 'Iago Rangel','Wellisson Chaves','Rutemar Júnior','Marlon Souza'])]
+    #df_dist = df[df['user.name'].isin(['Luan Araújo', 'Iago Rangel','Wellisson Chaves','Rutemar Júnior','Larissa Sousa','Marlon Souza'])]
+    df_dist = df[df['Unidade de Negócio'].isin(['Distribuição'])]
     df_dist = df_dist[colunas].copy()
     df_dist.loc[:, "Fator"] = (
         df_dist["Fator"]
