@@ -7,6 +7,7 @@ from datetime import datetime, timezone
 from utils.auth import get_rdstation_token
 from scripts.ajuste_dist import ajustar_dist
 from scripts.ajuste_rep import ajustar_rep
+import ast
 
 page = 1
 start_date = '2025-01-01'
