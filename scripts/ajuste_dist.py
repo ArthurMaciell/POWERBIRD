@@ -33,5 +33,5 @@ def ajustar_dist(caminho):
     taxa_conversao = (ganhas / total)
     df_dist["taxa_conversao"] = df["organization.name"].map(taxa_conversao)
     
-    caminho_dist = r"C:\Users\Orçamento\OneDrive - GRUPO RETEC\02. Engenharia\Dep. Orçamentos\POWERBI\AUTOMACAO RD\data\negociacoes_dist_2025.xlsx"
+    caminho_dist = r"data\negociacoes_dist_2025.xlsx"
     df_dist.to_excel(caminho_dist)
